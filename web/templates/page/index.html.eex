@@ -1,0 +1,4 @@
+<div class="jumbotron">
+  <h2>Offcourse Admin</h2>
+  <%= link "Waypoints", to: waypoint_path(@conn, :index) %>
+</div>

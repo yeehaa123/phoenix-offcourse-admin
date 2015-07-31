@@ -1,0 +1,6 @@
+<h2>New waypoint</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: waypoint_path(@conn, :create) %>
+
+<%= link "Back", to: waypoint_path(@conn, :index) %>

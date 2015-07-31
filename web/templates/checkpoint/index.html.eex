@@ -1,0 +1,20 @@
+<h2>Listing Checkpoints for <%= @waypoint.title %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Instructions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for checkpoint <- @checkpoints do %>
+      <td><%= checkpoint.title %></td>
+      <td><%= checkpoint.description %></td>
+      <td><%= checkpoint.instructions %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link "New Checkpoint", to: waypoint_checkpoint_path(@conn, :new, @waypoint) %>

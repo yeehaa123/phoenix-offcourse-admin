@@ -1,0 +1,30 @@
+<h2>Show waypoint</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @waypoint.title %>
+  </li>
+
+  <li>
+    <strong>Curator:</strong>
+    <%= @waypoint.curator %>
+  </li>
+
+  <li>
+    <strong>Summary:</strong>
+    <%= @waypoint.summary %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @waypoint.description %>
+  </li>
+
+</ul>
+
+
+<%= link "Edit", to: waypoint_path(@conn, :edit, @waypoint) %>
+<%= link "Back", to: waypoint_path(@conn, :index) %>
+<%= link "Checkpoints", to: waypoint_checkpoint_path(@conn, :index, @waypoint) %>

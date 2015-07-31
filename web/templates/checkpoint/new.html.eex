@@ -1,0 +1,7 @@
+<h2>New Checkpoint for <%= @waypoint.title %></h2>
+
+<%= render "form.html", changeset: @changeset,
+            action: waypoint_checkpoint_path(@conn, :create, @waypoint) %>
+
+<%= link "Back to Checkpoints",
+          to: waypoint_checkpoint_path(@conn, :index, @waypoint) %>
