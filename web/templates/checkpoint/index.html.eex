@@ -10,9 +10,15 @@
   </thead>
   <tbody>
     <%= for checkpoint <- @checkpoints do %>
-      <td><%= checkpoint.title %></td>
-      <td><%= checkpoint.description %></td>
-      <td><%= checkpoint.instructions %></td>
+      <tr>
+        <td><%= checkpoint.title %></td>
+        <td><%= checkpoint.description %></td>
+        <td>
+        <%= for instruction <- checkpoint.instructions do %>
+          <p><%= instruction %></p>
+        <% end %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>

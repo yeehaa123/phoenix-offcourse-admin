@@ -22,8 +22,11 @@ defmodule Admin.CheckpointController do
   end
 
   def create(conn, %{"checkpoint" => checkpoint_params}) do
+    %{ "one" => one, "two" => two, "three" => three, "four" => four } = checkpoint_params
+    instructions = [one, two, three]
+    params = Map.put(checkpoint_params, "instructions", instructions)
     changeset = build(conn.assigns.waypoint, :checkpoints)
-      |> Checkpoint.changeset(checkpoint_params)
+      |> Checkpoint.changeset(params)
 
     if changeset.valid? do
       Repo.insert(changeset)

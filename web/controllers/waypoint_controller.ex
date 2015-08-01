@@ -6,7 +6,9 @@ defmodule Admin.WaypointController do
   plug :scrub_params, "waypoint" when action in [:create, :update]
 
   def index(conn, _params) do
-    waypoints = Repo.all(Waypoint)
+    query = from w in Waypoint,
+            preload: [:checkpoints]
+    waypoints = Repo.all(query)
     render(conn, "index.html", waypoints: waypoints)
   end
 

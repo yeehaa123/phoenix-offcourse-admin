@@ -20,6 +20,14 @@
     <%= text_input f, :description, class: "form-control" %>
   </div>
 
+ <div class="form-group">
+    <label>Instructions</label>
+    <%= text_input f, :one, class: "form-control" %>
+    <%= text_input f, :two, class: "form-control" %>
+    <%= text_input f, :three, class: "form-control" %>
+    <%= text_input f, :four, class: "form-control" %>
+ </div>
+
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>

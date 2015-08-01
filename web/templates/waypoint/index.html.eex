@@ -7,7 +7,7 @@
       <th>Curator</th>
       <th>Summary</th>
       <th>Description</th>
-
+      <th>Checkpoints</th>
       <th></th>
     </tr>
   </thead>
@@ -18,6 +18,11 @@
       <td><%= waypoint.curator %></td>
       <td><%= waypoint.summary %></td>
       <td><%= waypoint.description %></td>
+      <td>
+        <%= for checkpoint <- waypoint.checkpoints do %>
+          <p><%= checkpoint.title %></p>
+        <% end %>
+      </td>
 
       <td class="text-right">
         <%= link "Show", to: waypoint_path(@conn, :show, waypoint), class: "btn btn-default btn-xs" %>
